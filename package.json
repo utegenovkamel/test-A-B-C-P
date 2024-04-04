@@ -1,0 +1,50 @@
+{
+  "name": "vite-min-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "biome lint ./src",
+    "preview": "vite preview",
+    "format": "biome format --write ./src",
+    "test": "bun test src",
+    "test-e2e": "playwright test",
+    "test-e2e-ui": "playwright test --ui",
+    "test-e2e-snapshots": "playwright test --update-snapshots"
+  },
+  "dependencies": {
+    "@mantine/core": "7.6.1",
+    "@mantine/hooks": "7.6.1",
+    "@mantine/notifications": "^7.7.1",
+    "@tanstack/react-router": "^1.26.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.6.3",
+    "@types/bun": "^1.0.12",
+    "@types/node": "^20.12.2",
+    "@types/react": "^18.2.65",
+    "@types/react-dom": "^18.2.21",
+    "@vitejs/plugin-react": "^4.2.1",
+    "lint-staged": "^15.2.2",
+    "postcss": "^8.4.35",
+    "@playwright/test": "^1.41.1",
+    "postcss-preset-mantine": "1.13.0",
+    "postcss-simple-vars": "^7.0.1",
+    "simple-git-hooks": "^2.11.1",
+    "typescript": "^5.4.2",
+    "vite": "^5.1.6"
+  },
+  "packageManager": "pnpm@8.15.5",
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs,json}": [
+      "biome format --write --no-errors-on-unmatched"
+    ]
+  }
+}
