@@ -127,3 +127,10 @@ dist
 .pnp.*
 
 .DS_Store
+
+# Tests
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/tests/*.ts-snapshots
